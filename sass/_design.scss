@@ -1,0 +1,146 @@
+
+.container{
+    @include flex(row,center,flex-end);
+    @include break($bp-tablet){
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .details{
+    padding: 3.8rem 12.8rem 3.8rem 3.8rem;
+    background: $color-neutral-dark-blue;
+    border-radius:$border-radius 100px $border-radius $border-radius;
+    margin-right: 3rem;
+    @include flex(column,center,flex-start);
+    box-shadow: 1px 3px 10px $color-neutral-very-dark-blue;
+    @include break($bp-tablet){
+        margin-bottom: 10rem;
+    }
+    @include break($bp-mobile){
+        margin-bottom: 1.8rem;
+    }
+    
+    &__logo{
+        margin-bottom: 2.8rem;
+    }
+    
+    &__access{
+        width: 17.6rem;
+        height: 4.8rem;
+        @include flex(row,center,center);
+        @include break($bp-mobile){
+            width: 100%;
+        }
+        
+        &--item{
+            background: $color-neutral-very-dark-blue;
+            border-radius: $border-radius;
+            height: 100%;
+            width: 100%;
+            @include flex(row,center,center);
+            &:not(:last-child){
+                margin-right: 1.4rem;
+            }
+            // &--img{
+            // }
+        }
+        
+    }
+}
+
+.status{
+    @include flex(column,center,flex-start);
+    padding:$padding-all;
+    background: $color-neutral-dark-blue;
+    width: 54rem;
+    border-radius:$border-radius;
+    position: relative;
+    box-shadow: 1px 3px 10px $color-neutral-very-dark-blue;
+    @include break($bp-mobile){
+        width: 100%;
+    }
+        
+    
+    &__text{
+        color:$color-neutral-pale-blue;
+        margin-bottom: 1.4rem;
+        strong{
+            font-weight: $font-weight-700;
+        }
+    }
+    
+    &__rem{
+        background: $color-neutral-pale-blue;
+        @include flex(row,center,center);
+        padding: 2.4rem;
+        position: absolute;
+        bottom:50%;
+        right: 10%;
+        transform: translateY(-50%);
+        border-radius: $border-radius $border-radius 0 $border-radius;
+        box-shadow: 1px 3px 10px $color-neutral-very-dark-blue;
+        @include break($bp-mobile){
+            border-radius: $border-radius;
+            bottom: -40%;
+            left:50%;
+            right:0;
+            transform: translateY(0);
+            transform: translateX(-50%);
+        }
+        &::after{
+            content: "";
+            padding: 1.8rem 1.8rem;
+            background: $color-neutral-pale-blue;
+            position: absolute;
+            top:100%;
+            right: 0;
+            clip-path: polygon(100% 0, 40% 0, 100% 100%);
+            box-shadow: 1px 3px 10px $color-neutral-very-dark-blue;
+            @include break($bp-mobile){
+                display: none;
+            }
+
+        }
+        &--text{
+            color:$color-neutral-grayish-blue;
+            font-weight: $font-weight-700;
+            strong{
+                font-weight: $font-weight-700;
+                font-size: 3.2rem;
+                color:$color-neutral-very-dark-blue;
+            }
+        }
+    }
+    
+    &__line{
+        height: 1.8rem;
+        width:100%;
+        background:$color-neutral-very-dark-blue;
+        border-radius: $border-radius;
+        position: relative;
+        margin-bottom: 1.2rem;
+        &::before{
+            position: absolute;
+            content: "";
+            width: 70%;
+            height: 90%;
+            top:50%;
+            left:0.4%;
+            transform: translateY(-50%);
+            border-radius: $border-radius;
+            background-image: $color-gradient-primary;
+           
+        }
+    }
+    
+    &__level{
+        width: 100%;
+        @include flex(row,space-between,center);
+        color:$color-neutral-pale-blue;
+        font-weight: $font-weight-700;
+        
+    }
+}
+
+}
+

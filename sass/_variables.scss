@@ -1,0 +1,39 @@
+
+//Color Variables 
+$color-gradient-primary: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+$color-neutral-pale-blue: hsl(243, 100%, 93%);
+$color-neutral-grayish-blue: hsl(229, 7%, 55%);
+$color-neutral-dark-blue:  hsl(228, 56%, 26%);
+$color-neutral-very-dark-blue: hsl(229, 57%, 11%);
+
+
+//Font Variables 
+$font-size-14px:1.4rem;
+$font-family:'Raleway', sans-serif;
+$font-weight-400:400;
+$font-weight-700:700;
+
+//Standard Variable
+$border-radius:10px;
+$padding-all:3.8rem;
+
+//Breakpoint Variables
+$bp-mobile:25.875em;
+$bp-tablet:57em;
+
+
+
+
+//Mixins
+@mixin flex($dir,$just,$align){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $just;
+    align-items: $align;
+}
+
+@mixin break($bp){
+    @media only screen and (max-width:$bp){
+        @content;
+    }
+}
